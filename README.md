@@ -9,7 +9,7 @@
 
 ## 🌌 Overview
 
-This application provides a real-time physics simulation of gravitational wave interactions with wormhole throat geometry. Designed for defense research and public demonstration of theoretical teleportation mechanics, the system visualizes spacetime curvature effects and implements Dynamic Resonance Rooting (DRR) control algorithms.
+This app provides a real-time physics simulation of gravitational wave interactions with wormhole throat geometry. Designed for defense research and public demonstration of theoretical teleportation mechanics, the system visualizes spacetime curvature effects and implements Dynamic Resonance Rooting (DRR) control algorithms.
 
 ## ✨ Key Features
 
