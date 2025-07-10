@@ -48,7 +48,7 @@ This app provides a real-time physics simulation of gravitational wave interacti
 ### Installation
 ```bash
 # Clone the repository
-git clone <repository-url>
+git clone topherchris420/wormhole-resonance-visualizer
 
 # Navigate to project directory
 cd drr-wormhole-stabilization
