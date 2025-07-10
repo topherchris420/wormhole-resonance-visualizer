@@ -52,6 +52,25 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				// Physics Simulation Colors
+				quantum: {
+					glow: 'hsl(var(--quantum-glow))'
+				},
+				gravitational: {
+					wave: 'hsl(var(--gravitational-wave))'
+				},
+				spacetime: {
+					distortion: 'hsl(var(--spacetime-distortion))'
+				},
+				energy: {
+					critical: 'hsl(var(--energy-critical))'
+				},
+				stability: {
+					good: 'hsl(var(--stability-good))'
+				},
+				resonance: {
+					active: 'hsl(var(--resonance-active))'
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -84,11 +103,56 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'quantum-pulse': {
+					'0%, 100%': { 
+						opacity: '0.6',
+						transform: 'scale(1)'
+					},
+					'50%': { 
+						opacity: '1',
+						transform: 'scale(1.05)'
+					}
+				},
+				'wormhole-rotation': {
+					'0%': { transform: 'rotate(0deg)' },
+					'100%': { transform: 'rotate(360deg)' }
+				},
+				'gravitational-wave': {
+					'0%, 100%': { transform: 'scaleY(1)' },
+					'50%': { transform: 'scaleY(1.2)' }
+				},
+				'energy-flow': {
+					'0%': { 
+						backgroundPosition: '0% 50%'
+					},
+					'100%': { 
+						backgroundPosition: '100% 50%'
+					}
+				},
+				'spacetime-ripple': {
+					'0%': { 
+						transform: 'scale(1) rotate(0deg)',
+						opacity: '0.8'
+					},
+					'50%': { 
+						transform: 'scale(1.1) rotate(180deg)',
+						opacity: '0.6'
+					},
+					'100%': { 
+						transform: 'scale(1) rotate(360deg)',
+						opacity: '0.8'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'quantum-pulse': 'quantum-pulse 2s ease-in-out infinite',
+				'wormhole-rotation': 'wormhole-rotation 20s linear infinite',
+				'gravitational-wave': 'gravitational-wave 1s ease-in-out infinite',
+				'energy-flow': 'energy-flow 3s linear infinite',
+				'spacetime-ripple': 'spacetime-ripple 4s ease-in-out infinite'
 			}
 		}
 	},
