@@ -1,7 +1,7 @@
 # DRR Wormhole Stabilization System
 
-> **Defense Research Simulation Platform v2.1**  
-> Advanced physics simulation for Dynamic Resonance Rooting (DRR)-controlled wormhole stabilization
+> **Defense Research Wormhole**  
+> Experimental app for Dynamic Resonance Rooting (DRR)-controlled wormhole stabilization
 
 ![Wormhole Simulation](https://img.shields.io/badge/Status-Operational-green)
 ![Platform](https://img.shields.io/badge/Platform-Desktop%20%7C%20Tablet-blue)
