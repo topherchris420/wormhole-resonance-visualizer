@@ -222,41 +222,41 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="border-b border-border bg-card/50 backdrop-blur-sm">
-        <div className="container mx-auto px-4 py-4">
+      {/* Gemini-inspired Header */}
+      <header className="border-b border-border bg-background/80 backdrop-blur-md">
+        <div className="container mx-auto px-6 py-5">
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-full bg-gradient-to-r from-primary to-accent flex items-center justify-center">
-                <Atom className="w-4 h-4 text-primary-foreground" />
+            <div className="flex items-center gap-4">
+              <div className="w-10 h-10 rounded-2xl bg-gemini-gradient flex items-center justify-center shadow-lg">
+                <Atom className="w-5 h-5 text-white animate-float" />
               </div>
               <div>
-                <h1 className="text-xl font-bold text-foreground">
-                  DRR Wormhole Stabilization System
+                <h1 className="text-2xl font-heading font-medium text-foreground">
+                  Wormhole Research Lab
                 </h1>
-                <p className="text-sm text-muted-foreground">
-                  Defense Research Simulation Platform v2.1
+                <p className="text-sm text-muted-foreground font-medium">
+                  Advanced Physics Simulation Platform
                 </p>
               </div>
             </div>
             
             <div className="flex items-center gap-3">
               <Badge 
-                variant={isStable ? "default" : "destructive"}
-                className={`${isStable ? 'bg-stability-good' : ''} animate-quantum-pulse`}
+                variant={isStable ? "secondary" : "destructive"}
+                className={`${isStable ? 'bg-secondary text-secondary-foreground border-0' : 'bg-destructive/10 text-destructive border border-destructive/20'} px-3 py-1.5 rounded-full font-medium animate-gemini-pulse`}
               >
                 {isStable ? (
-                  <Shield className="w-3 h-3 mr-1" />
+                  <Shield className="w-3.5 h-3.5 mr-1.5" />
                 ) : (
-                  <AlertTriangle className="w-3 h-3 mr-1" />
+                  <AlertTriangle className="w-3.5 h-3.5 mr-1.5" />
                 )}
-                {isStable ? 'OPERATIONAL' : 'CRITICAL'}
+                {isStable ? 'Stable' : 'Unstable'}
               </Badge>
               
               {drrActive && (
-                <Badge className="bg-resonance-active animate-quantum-pulse">
-                  <Activity className="w-3 h-3 mr-1" />
-                  DRR ACTIVE
+                <Badge className="bg-gemini-purple/10 text-gemini-purple border border-gemini-purple/20 px-3 py-1.5 rounded-full font-medium animate-gemini-pulse">
+                  <Activity className="w-3.5 h-3.5 mr-1.5" />
+                  DRR Active
                 </Badge>
               )}
             </div>
@@ -265,25 +265,34 @@ const Index = () => {
       </header>
 
       {/* Main Interface */}
-      <main className="container mx-auto px-4 py-6 space-y-6">
-        {/* Scientific Tabs Interface */}
+      <main className="container mx-auto px-6 py-8 space-y-8">
+        {/* Gemini-style Tabs Interface */}
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-          <TabsList className="grid w-full grid-cols-3 bg-card">
-            <TabsTrigger value="overview" className="flex items-center gap-2">
+          <TabsList className="grid w-full grid-cols-3 bg-secondary/30 rounded-xl p-1 h-12">
+            <TabsTrigger 
+              value="overview" 
+              className="flex items-center gap-2 rounded-lg font-medium data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-sm transition-all"
+            >
               <Activity className="w-4 h-4" />
               Overview
             </TabsTrigger>
-            <TabsTrigger value="physics" className="flex items-center gap-2">
+            <TabsTrigger 
+              value="physics" 
+              className="flex items-center gap-2 rounded-lg font-medium data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-sm transition-all"
+            >
               <FlaskConical className="w-4 h-4" />
               Physics Analysis
             </TabsTrigger>
-            <TabsTrigger value="controls" className="flex items-center gap-2">
+            <TabsTrigger 
+              value="controls" 
+              className="flex items-center gap-2 rounded-lg font-medium data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-sm transition-all"
+            >
               <Zap className="w-4 h-4" />
               Controls
             </TabsTrigger>
           </TabsList>
 
-          <TabsContent value="overview" className="space-y-6">
+          <TabsContent value="overview" className="space-y-8">
             {/* Metrics Dashboard */}
             <MetricsDashboard
               stability={physicsData.stability}
@@ -296,15 +305,17 @@ const Index = () => {
               drrActive={drrActive}
             />
 
-            <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 xl:grid-cols-3 gap-8">
               {/* Wormhole Visualization */}
               <div className="xl:col-span-2">
-                <Card className="bg-card border-border">
-                  <CardHeader className="pb-3">
-                    <CardTitle className="flex items-center gap-2 text-foreground">
-                      <Waves className="w-5 h-5 text-primary" />
+                <Card className="bg-card border-border shadow-sm rounded-2xl overflow-hidden">
+                  <CardHeader className="pb-4 px-6 pt-6">
+                    <CardTitle className="flex items-center gap-3 text-foreground font-heading text-lg">
+                      <div className="p-2 rounded-xl bg-primary/10">
+                        <Waves className="w-5 h-5 text-primary" />
+                      </div>
                       Real-Time Spacetime Simulation
-                      <Badge variant="outline" className="ml-auto text-xs animate-quantum-pulse">
+                      <Badge variant="secondary" className="ml-auto text-xs font-medium bg-secondary/50 rounded-full px-3 py-1">
                         Live Physics
                       </Badge>
                     </CardTitle>
@@ -338,46 +349,51 @@ const Index = () => {
                 />
 
                 {/* Real-Time System Status */}
-                <Card className="bg-card border-border">
-                  <CardHeader className="pb-3">
-                    <CardTitle className="flex items-center gap-2 text-sm text-foreground">
-                      <Atom className="w-4 h-4 text-accent" />
+                <Card className="bg-card border-border shadow-sm rounded-2xl">
+                  <CardHeader className="pb-4 px-6 pt-6">
+                    <CardTitle className="flex items-center gap-3 text-foreground font-heading text-lg">
+                      <div className="p-2 rounded-xl bg-accent/10">
+                        <Atom className="w-4 h-4 text-accent" />
+                      </div>
                       Live System Status
                     </CardTitle>
                   </CardHeader>
-                  <CardContent className="space-y-3">
-                    <div className="grid grid-cols-2 gap-4 text-sm">
-                      <div>
-                        <div className="text-muted-foreground">Mission Time</div>
-                        <div className="font-mono text-foreground">
+                  <CardContent className="space-y-4 px-6 pb-6">
+                    <div className="grid grid-cols-2 gap-6 text-sm">
+                      <div className="space-y-1">
+                        <div className="text-muted-foreground font-medium">Mission Time</div>
+                        <div className="font-mono text-foreground text-base">
                           {Math.floor(systemTime / 600)}:{String(Math.floor((systemTime % 600) / 10)).padStart(2, '0')}
                         </div>
                       </div>
-                      <div>
-                        <div className="text-muted-foreground">Throat Radius</div>
-                        <div className="font-mono text-foreground">
+                      <div className="space-y-1">
+                        <div className="text-muted-foreground font-medium">Throat Radius</div>
+                        <div className="font-mono text-foreground text-base">
                           {(throatRadius / 1000).toFixed(1)} km
                         </div>
                       </div>
                     </div>
                     
-                    <Separator />
+                    <Separator className="my-4" />
                     
-                    <div className="space-y-2 text-sm">
-                      <div className="flex justify-between">
-                        <span className="text-muted-foreground">Physics Validation</span>
-                        <span className={WormholePhysics.validateParameters(frequency, amplitude, throatRadius).isValid ? 'text-stability-good' : 'text-destructive'}>
-                          {WormholePhysics.validateParameters(frequency, amplitude, throatRadius).isValid ? 'VALID' : 'INVALID'}
-                        </span>
+                    <div className="space-y-3 text-sm">
+                      <div className="flex justify-between items-center">
+                        <span className="text-muted-foreground font-medium">Physics Validation</span>
+                        <Badge 
+                          variant={WormholePhysics.validateParameters(frequency, amplitude, throatRadius).isValid ? "secondary" : "destructive"}
+                          className="text-xs font-medium rounded-full"
+                        >
+                          {WormholePhysics.validateParameters(frequency, amplitude, throatRadius).isValid ? 'Valid' : 'Invalid'}
+                        </Badge>
                       </div>
-                      <div className="flex justify-between">
-                        <span className="text-muted-foreground">GW Strain</span>
+                      <div className="flex justify-between items-center">
+                        <span className="text-muted-foreground font-medium">GW Strain</span>
                         <span className="font-mono text-foreground">{amplitude.toExponential(2)}</span>
                       </div>
-                      <div className="flex justify-between">
-                        <span className="text-muted-foreground">DRR Resonance</span>
-                        <span className="text-resonance-active">
-                          {drrActive ? `${physicsData.resonanceDepth.toFixed(1)}%` : 'INACTIVE'}
+                      <div className="flex justify-between items-center">
+                        <span className="text-muted-foreground font-medium">DRR Resonance</span>
+                        <span className={drrActive ? "text-gemini-purple font-medium" : "text-muted-foreground"}>
+                          {drrActive ? `${physicsData.resonanceDepth.toFixed(1)}%` : 'Inactive'}
                         </span>
                       </div>
                     </div>

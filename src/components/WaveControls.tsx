@@ -31,30 +31,32 @@ export const WaveControls: React.FC<WaveControlsProps> = ({
   onDrrToggle
 }) => {
   return (
-    <Card className="bg-card border-border">
-      <CardHeader className="pb-4">
+    <Card className="bg-card border-border shadow-sm rounded-2xl">
+      <CardHeader className="pb-4 px-6 pt-6">
         <div className="flex items-center justify-between">
-          <CardTitle className="flex items-center gap-2 text-foreground">
-            <Waves className="w-5 h-5 text-gravitational-wave" />
+          <CardTitle className="flex items-center gap-3 text-foreground font-heading text-lg">
+            <div className="p-2 rounded-xl bg-gravitational-wave/10">
+              <Waves className="w-5 h-5 text-gravitational-wave" />
+            </div>
             Gravitational Wave Controls
           </CardTitle>
           <Badge 
-            variant={isStable ? "default" : "destructive"}
-            className={isStable ? "bg-stability-good" : ""}
+            variant={isStable ? "secondary" : "destructive"}
+            className={isStable ? "bg-secondary/50 text-secondary-foreground border-0 rounded-full px-3 py-1" : "bg-destructive/10 text-destructive border border-destructive/20 rounded-full px-3 py-1"}
           >
-            {isStable ? "STABLE" : "CRITICAL"}
+            {isStable ? "Stable" : "Critical"}
           </Badge>
         </div>
       </CardHeader>
       
-      <CardContent className="space-y-6">
+      <CardContent className="space-y-6 px-6 pb-6">
         {/* Frequency Control */}
-        <div className="space-y-3">
+        <div className="space-y-4">
           <div className="flex items-center justify-between">
             <label className="text-sm font-medium text-foreground">
               Frequency (Hz)
             </label>
-            <span className="text-sm font-mono text-muted-foreground bg-muted px-2 py-1 rounded">
+            <span className="text-sm font-mono text-muted-foreground bg-secondary/30 px-3 py-1.5 rounded-lg">
               {frequency.toFixed(2)}
             </span>
           </div>
@@ -64,9 +66,9 @@ export const WaveControls: React.FC<WaveControlsProps> = ({
             max={5}
             min={0.1}
             step={0.1}
-            className="[&_[role=slider]]:bg-gravitational-wave [&_[role=slider]]:border-gravitational-wave"
+            className="[&_[role=slider]]:bg-gravitational-wave [&_[role=slider]]:border-gravitational-wave [&_[role=slider]]:shadow-sm"
           />
-          <div className="text-xs text-muted-foreground">
+          <div className="text-xs text-muted-foreground font-medium">
             Controls the oscillation rate of gravitational waves
           </div>
         </div>
@@ -118,20 +120,20 @@ export const WaveControls: React.FC<WaveControlsProps> = ({
         </div>
 
         {/* Control Actions */}
-        <div className="flex gap-3 pt-4 border-t border-border">
+        <div className="flex gap-3 pt-6 border-t border-border">
           <Button
             onClick={onDrrToggle}
             variant={drrActive ? "default" : "outline"}
-            className={`flex-1 ${drrActive ? 'bg-resonance-active hover:bg-resonance-active/80' : ''}`}
+            className={`flex-1 rounded-xl font-medium h-11 ${drrActive ? 'bg-gemini-purple hover:bg-gemini-purple/90 text-white shadow-sm' : 'border-2 hover:bg-secondary/50'}`}
           >
             <Zap className="w-4 h-4 mr-2" />
-            DRR {drrActive ? 'ON' : 'OFF'}
+            DRR {drrActive ? 'On' : 'Off'}
           </Button>
           
           <Button
             onClick={onReset}
             variant="outline"
-            className="border-muted-foreground/30"
+            className="border-2 rounded-xl font-medium h-11 hover:bg-secondary/50"
           >
             <RotateCcw className="w-4 h-4 mr-2" />
             Reset

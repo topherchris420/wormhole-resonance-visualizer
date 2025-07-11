@@ -1,119 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;600;700&family=Google+Sans+Text:wght@400;500&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    /* Cosmic Background System */
-    --background: 220 100% 2%;
-    --foreground: 180 100% 95%;
-
-    /* Interface Cards */
-    --card: 220 50% 8%;
-    --card-foreground: 180 100% 95%;
-
-    /* Popovers */
-    --popover: 220 50% 6%;
-    --popover-foreground: 180 100% 95%;
-
-    /* Primary - Electric Blue for active elements */
-    --primary: 200 100% 60%;
-    --primary-foreground: 220 100% 2%;
-
-    /* Secondary - Deep Space Purple */
-    --secondary: 260 40% 25%;
-    --secondary-foreground: 180 100% 95%;
-
-    /* Muted - Dark Space Gray */
-    --muted: 220 20% 15%;
-    --muted-foreground: 180 30% 70%;
-
-    /* Accent - Quantum Green */
-    --accent: 140 80% 50%;
-    --accent-foreground: 220 100% 2%;
-
-    /* Destructive - Wormhole Collapse Red */
-    --destructive: 0 90% 65%;
-    --destructive-foreground: 180 100% 95%;
-
-    /* Borders and Inputs */
-    --border: 220 30% 25%;
-    --input: 220 30% 20%;
-    --ring: 200 100% 60%;
-
-    /* Physics Theme Extensions */
-    --quantum-glow: 140 100% 60%;
-    --gravitational-wave: 280 100% 70%;
-    --spacetime-distortion: 320 80% 65%;
-    --energy-critical: 15 100% 65%;
-    --stability-good: 120 80% 55%;
-    --resonance-active: 200 100% 50%;
-
-    /* Gradients */
-    --gradient-cosmic: linear-gradient(135deg, hsl(220 100% 2%), hsl(260 80% 8%));
-    --gradient-wormhole: radial-gradient(circle, hsl(200 100% 40% / 0.8), hsl(280 100% 30% / 0.4));
-    --gradient-energy: linear-gradient(90deg, hsl(140 80% 50%), hsl(200 100% 60%));
-
-    /* Shadows and Glows */
-    --shadow-quantum: 0 0 30px hsl(var(--quantum-glow) / 0.5);
-    --shadow-gravitational: 0 0 20px hsl(var(--gravitational-wave) / 0.4);
-    --shadow-critical: 0 0 25px hsl(var(--energy-critical) / 0.6);
-
-    /* Animations */
-    --transition-physics: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --pulse-frequency: 2s;
-
+    /* Light theme - Google Gemini inspired */
+    --background: 0 0% 100%;
+    --foreground: 220 13% 13%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 13% 13%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 13% 13%;
+    --primary: 221 83% 53%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 13% 95%;
+    --secondary-foreground: 220 13% 13%;
+    --muted: 220 13% 95%;
+    --muted-foreground: 220 13% 45%;
+    --accent: 221 83% 53%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 221 83% 53%;
     --radius: 0.75rem;
+    
+    /* Custom colors for Gemini-inspired wormhole theme */
+    --primary-glow: 221 83% 70%;
+    --gravitational-wave: 260 100% 70%;
+    --spacetime-distortion: 292 84% 61%;
+    --exotic-matter: 271 91% 65%;
+    --stability-good: 142 71% 45%;
+    --stability-warning: 45 93% 58%;
+    --stability-critical: 0 84% 60%;
+    --resonance-active: 292 84% 61%;
+    --wormhole-throat: 221 83% 53%;
+    
+    /* Gemini gradient colors */
+    --gemini-blue: 221 83% 53%;
+    --gemini-purple: 292 84% 61%;
+    --gemini-teal: 194 100% 70%;
+    --gemini-orange: 25 95% 53%;
 
+    /* Sidebar */
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Dark theme - Gemini inspired dark mode */
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
+    --card: 224 71% 4%;
+    --card-foreground: 213 31% 91%;
+    --popover: 224 71% 4%;
+    --popover-foreground: 213 31% 91%;
+    --primary: 221 83% 53%;
+    --primary-foreground: 213 31% 91%;
+    --secondary: 215 28% 17%;
+    --secondary-foreground: 213 31% 91%;
+    --muted: 215 28% 17%;
+    --muted-foreground: 217 33% 64%;
+    --accent: 292 84% 61%;
+    --accent-foreground: 213 31% 91%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 213 31% 91%;
+    --border: 215 28% 17%;
+    --input: 215 28% 17%;
+    --ring: 221 83% 53%;
+    
+    /* Dark theme Gemini colors */
+    --primary-glow: 221 83% 70%;
+    --gravitational-wave: 260 100% 70%;
+    --spacetime-distortion: 292 84% 61%;
+    --exotic-matter: 271 91% 65%;
+    --stability-good: 142 71% 45%;
+    --stability-warning: 45 93% 58%;
+    --stability-critical: 0 84% 60%;
+    --resonance-active: 292 84% 61%;
+    --wormhole-throat: 221 83% 53%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    /* Dark sidebar */
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -129,8 +104,12 @@ All colors MUST be HSL.
   * {
     @apply border-border;
   }
-
   body {
     @apply bg-background text-foreground;
+    font-family: "Google Sans Text", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Google Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   }
 }
