@@ -232,10 +232,10 @@ const Index = () => {
               </div>
               <div>
                 <h1 className="text-2xl font-heading font-medium text-foreground">
-                  Wormhole Research Lab
+                  Vers3Dynamics Research Lab
                 </h1>
                 <p className="text-sm text-muted-foreground font-medium">
-                  Advanced Physics Simulation Platform
+                  created by Christopher
                 </p>
               </div>
             </div>
