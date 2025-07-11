@@ -27,7 +27,7 @@ const Index = () => {
   const [frequency, setFrequency] = useState(1.5); // Hz (LIGO frequency range)
   const [amplitude, setAmplitude] = useState(1.0e-21); // Strain amplitude (realistic GW strain)
   const [phase, setPhase] = useState(0);
-  const [throatRadius, setThroatRadius] = useState(1000); // meters
+  const [throatRadius, setThroatRadius] = useState(3000000); // 3000 km (above Schwarzschild limit)
 
   // System state
   const [drrActive, setDrrActive] = useState(false);
@@ -180,7 +180,7 @@ const Index = () => {
     setFrequency(250); // Realistic GW merger frequency
     setAmplitude(1e-21); // Realistic strain amplitude
     setPhase(0);
-    setThroatRadius(1000); // 1km throat
+    setThroatRadius(3000000); // 3000 km throat (above Schwarzschild limit)
     setDrrActive(false);
     toast({
       title: "System Reset",
