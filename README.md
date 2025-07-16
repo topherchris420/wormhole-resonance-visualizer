@@ -3,7 +3,7 @@
 > **Defense Research Wormhole**  
 > Experimental app for Dynamic Resonance Rooting (DRR)-controlled wormhole stabilization
 
-![Wormhole Simulation](https://img.shields.io/badge/Status-Operational-green)
+![Wormhole Experiment](https://img.shields.io/badge/Status-Operational-green)
 ![Platform](https://img.shields.io/badge/Platform-Desktop%20%7C%20Tablet-blue)
 ![Classification](https://img.shields.io/badge/Classification-Research%20Simulation-orange)
 
